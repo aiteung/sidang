@@ -38,7 +38,7 @@ func GetNPMfromHandphone(db *sql.DB, handphone string) (npm string) {
 }
 
 func GetTotalBimbinganfromNPM(db *sql.DB, npm string, tipebimbingan string) (jmlhpertemuan int) {
-	q := "SELECT total_bimbingan, last_bimbingan FROM bimbingan_data WHERE npm = %s and tipe_bimbingan = '%s'"
+	q := "SELECT total_bimbingan FROM bimbingan_data WHERE npm = %s and tipe_bimbingan = '%s'"
 	tsql := fmt.Sprintf(q, npm, tipebimbingan)
 	err := db.QueryRow(tsql).Scan(&jmlhpertemuan)
 	if err == sql.ErrNoRows {
