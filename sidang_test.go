@@ -91,12 +91,12 @@ func TestIsValid(m *testing.T) {
 }
 
 func TestGetNPM(m *testing.T) {
-	hasil := GetNPMfromHandphone(DBAkademik, "6283826390631")
+	hasil, _ := GetNPMfromHandphone(DBAkademik, "62838263906319")
 	fmt.Println("NPM : ", hasil)
 }
 
 func TestGetJumlahBimbingan(m *testing.T) {
-	hasil := GetTotalBimbinganfromNPM(DBWanda, "1194055", "ta")
+	hasil, _ := GetTotalBimbinganfromNPM(DBWanda, "1194055", "ta")
 	fmt.Println("Jumlah Bimbingan : ", hasil)
 }
 
