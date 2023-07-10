@@ -9,7 +9,7 @@ import (
 
 var dbmongoinfo = atdb.DBInfo{
 	DBString: os.Getenv("MONGOSTRING"),
-	DBName:   "skt",
+	DBName:   "iteung",
 }
 var mongocon = atdb.MongoConnect(dbmongoinfo)
 
