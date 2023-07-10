@@ -9,7 +9,7 @@ import (
 	"github.com/aiteung/atdb"
 )
 
-var MariaStringAkademik = os.Getenv("MARIASTRINGCONNECT")
+var MariaStringAkademik = os.Getenv("MARIASTRINGAKADEMIK")
 var MariaAkademikInfo = atdb.DBInfo{
 	DBString: MariaStringAkademik,
 	DBName:   "db_ulbi",
