@@ -102,5 +102,5 @@ func TestGetJumlahBimbingan(m *testing.T) {
 
 func TestGetPengujiSidang(m *testing.T) {
 	hasil := GetPengujiSidang(mongocon, "1194055")
-	fmt.Println("Jumlah Bimbingan : ", hasil)
+	fmt.Println("Data Sidang : ", hasil)
 }
