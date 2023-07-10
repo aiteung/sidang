@@ -1,7 +1,9 @@
 package sidang
 
 import (
+	"fmt"
 	"os"
+	"reflect"
 	"testing"
 
 	"github.com/aiteung/atdb"
@@ -13,7 +15,7 @@ var dbmongoinfo = atdb.DBInfo{
 }
 var mongocon = atdb.MongoConnect(dbmongoinfo)
 
-func TestInputData(m *testing.T) {
+/* func TestInputData(m *testing.T) {
 	judul1 := []string{"5 Tahap Membuat Dashboard Admin untuk Kemudahan Programmer dengan Reactjs dan Tailwindcss",
 		"Analisis Hubungan Harga Bahan Bakar Terhadap Bahan Pangan Menggunakan Generalized Autoregressive Conditional Heteroscedasticity",
 		"Analisis Sentimen Masyarakat Terhadap Kebijakan Polisi Tilang Manual di Indonesia",
@@ -62,4 +64,14 @@ func TestInputData(m *testing.T) {
 	}
 	atdb.InsertOneDoc(mongocon, "skt", surat2)
 
+} */
+
+func TestGetData(m *testing.T) {
+	hasil := GetSkt(mongocon, "4381/PUS.01.01/PDPBP")
+	fmt.Println(reflect.DeepEqual(hasil, Skt{}))
+}
+
+func TestIsValid(m *testing.T) {
+	hasil := IsValidSKTNumber(mongocon, "4381/PUS.01.01/PDPBP")
+	fmt.Println(hasil)
 }
