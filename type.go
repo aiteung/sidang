@@ -5,8 +5,9 @@ type Skt struct {
 	Judul []string `json:"judul,omitempty" bson:"judul,omitempty"`
 }
 
-type Mhsdt struct {
-	MhswId    string
-	Nama      string
-	Handphone string
+type Sidang struct {
+	NPM        string `json:"npm,omitempty" bson:"npm,omitempty"`
+	Nama       string `json:"nama,omitempty" bson:"nama,omitempty"`
+	Penguji    string `json:"penguji,omitempty" bson:"penguji,omitempty"`
+	Pembimbing string `json:"pembimbing,omitempty" bson:"pembimbing,omitempty"`
 }

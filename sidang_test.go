@@ -99,3 +99,8 @@ func TestGetJumlahBimbingan(m *testing.T) {
 	hasil := GetTotalBimbinganfromNPM(DBWanda, "1194055", "ta")
 	fmt.Println("Jumlah Bimbingan : ", hasil)
 }
+
+func TestGetPengujiSidang(m *testing.T) {
+	hasil := GetPengujiSidang(mongocon, "1194055")
+	fmt.Println("Jumlah Bimbingan : ", hasil)
+}

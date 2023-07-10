@@ -16,6 +16,12 @@ func GetSkt(db *mongo.Database, nomor string) (usercred Skt) {
 	return
 }
 
+func GetPengujiSidang(db *mongo.Database, npm string) (sidang Sidang) {
+	filter := bson.M{"npm": npm}
+	sidang = atdb.GetOneDoc[Sidang](db, "sidang", filter)
+	return
+}
+
 func IsValidSKTNumber(db *mongo.Database, nomor string) bool {
 	hasil := GetSkt(db, nomor)
 	if reflect.DeepEqual(hasil, Skt{}) {
