@@ -9,6 +9,20 @@ import (
 	"github.com/aiteung/atdb"
 )
 
+var MariaStringAkademik = os.Getenv("MARIASTRINGCONNECT")
+var MariaAkademikInfo = atdb.DBInfo{
+	DBString: MariaStringAkademik,
+	DBName:   "db_ulbi",
+}
+var DBAkademik = atdb.MariaConnect(MariaAkademikInfo)
+
+var MariaStringWanda = os.Getenv("MARIASTRINGWANDA")
+var MariaWandaInfo = atdb.DBInfo{
+	DBString: MariaStringWanda,
+	DBName:   "wanda",
+}
+var DBWanda = atdb.MariaConnect(MariaWandaInfo)
+
 var dbmongoinfo = atdb.DBInfo{
 	DBString: os.Getenv("MONGOSTRING"),
 	DBName:   "iteung",
@@ -73,5 +87,10 @@ func TestGetData(m *testing.T) {
 
 func TestIsValid(m *testing.T) {
 	hasil := IsValidSKTNumber(mongocon, "4381/PUS.01.01/PDPBP")
+	fmt.Println(hasil)
+}
+
+func TestGetNPM(m *testing.T) {
+	hasil := GetNPMfromHandphone(DBAkademik, "6285156007137")
 	fmt.Println(hasil)
 }
